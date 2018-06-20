@@ -36,7 +36,7 @@ app.post('/shoppingList',function(req,res){
 // GETTING THE /shoppintList PAGE //
 app.get('/shoppingList',function(req,res){
 
-  db.any('SELECT store_name, shopping_list_id, FROM shopping_list').then(function(data){
+  db.any('SELECT store_name, shopping_list_id FROM shopping_list').then(function(data){
     res.render('shoppingList',{storeList : data})
   })
 
