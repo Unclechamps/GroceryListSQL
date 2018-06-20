@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Grocery List</title>
+  </head>
+  <body>
+    <h1>Shopping List</h1>
+
+    <h4>Add Store</h4>
+    <form action='/shoppingList' method='post'>
+      <input type="text" name="title" placeholder="e.g. Kroger, HEB...">
+      <input type="submit" />
+    </form>
+
+    <ul>
+      {{#storeList}}
+          <li>{{store_name}}</li>
+          <a href="/groceryItems/{{shopping_list_id}}">Add items</a>
+          <form action='/deleteList' method='post'>
+            <input type="hidden" name="delete" value={{shopping_list_id}}>
+            <input type="submit" value="Delete">
+          </form>
+      {{/storeList}}
+    </ul>
+
+
+  </body>
+</html>
