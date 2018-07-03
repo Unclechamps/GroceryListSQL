@@ -30,7 +30,7 @@ app.post('/shoppingList',function(req,res){
 
   db.none('INSERT INTO shopping_list(store_name) VALUES($1)',[title]).then(function(){
     res.redirect('/shoppingList')
-  })
+  }) 
 })
 
 // GETTING THE /shoppintList PAGE //
